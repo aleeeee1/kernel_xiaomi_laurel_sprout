@@ -341,18 +341,6 @@ static ssize_t white_read_show(struct device *device,
 	return snprintf(buf, 10, "%d:%d\n",display->panel->point_read.point_x,display->panel->point_read.point_y);
 }
 
-static ssize_t fod_ui_show(struct device *device,
-			    struct device_attribute *attr,
-			   char *buf)
-{
-	struct drm_connector *connector = to_drm_connector(device);
-	bool fod_ui;
-
-	fod_ui = READ_ONCE(connector->encoder);
-
-	return snprintf(buf, PAGE_SIZE, fod_ui ? "enabled\n" : "disabled\n");
-}
-
 static DEVICE_ATTR_RW(status);
 static DEVICE_ATTR_RO(enabled);
 static DEVICE_ATTR_RO(dpms);
@@ -360,7 +348,6 @@ static DEVICE_ATTR_RO(modes);
 static DEVICE_ATTR_RW(disp_param);
 static DEVICE_ATTR_RW(acl);
 static DEVICE_ATTR_RO(white_read);
-static DEVICE_ATTR_RO(fod_ui);
 
 static struct attribute *connector_dev_attrs[] = {
 	&dev_attr_status.attr,
@@ -370,7 +357,6 @@ static struct attribute *connector_dev_attrs[] = {
 	&dev_attr_disp_param.attr,
 	&dev_attr_acl.attr,
 	&dev_attr_white_read.attr,
-	&dev_attr_fod_ui.attr,
 	NULL
 };
 

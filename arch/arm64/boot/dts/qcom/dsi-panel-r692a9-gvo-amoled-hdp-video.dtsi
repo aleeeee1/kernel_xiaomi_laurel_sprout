@@ -77,29 +77,6 @@
 		qcom,mdss-dsi-reset-sequence = <1 12>, <0 2>, <1 10>;
 		qcom,mdss-pan-physical-width-dimension = <65>;
 		qcom,mdss-pan-physical-height-dimension = <140>;
- 		qcom,disp-fod-dim-lut = <
-			/* brightness, alpha */
-			0	0xFF
-			1	0xEE
-			2	0xE8
-			3	0xE6
-			4	0xF5
-			6	0xE4
-			10	0xE0
-			20	0xD5
-			30	0xCE
-			45	0xC6
-			70	0xB7
-			100	0xAD
-			150	0xA0
-			227	0x8A
-			300	0x80
-			400	0x6E
-			500	0x5B
-			600	0x50
-			800	0x38
-			1023	0x18
-		>;
 
 		qcom,mdss-dsi-display-timings {
 			timing@0 {
@@ -180,18 +157,6 @@
 				qcom,mdss-dsi-post-on-command-state = "dsi_lp_mode";
 				qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
 				qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
-
-				qcom,mdss-dsi-dispparam-hbm-fod-off-command = [
-					15 01 00 00 34 00 02 53 20];
-				qcom,mdss-dsi-dispparam-hbm-fod-off-command-state = "dsi_hs_mode";
-				qcom,mdss-dsi-dispparam-hbm-fod-on-command = [
-					15 01 00 00 10 00 02 53 E0];
-				qcom,mdss-dsi-dispparam-hbm-fod-on-command-state = "dsi_hs_mode";
-
-				qcom,mdss-dsi-dispparam-hbm-off-command = [15 01 00 00 00 00 02 53 28];
-				qcom,mdss-dsi-dispparam-hbm-off-command-state = "dsi_lp_mode";
-				qcom,mdss-dsi-dispparam-hbm-on-command = [15 01 00 00 00 00 02 53 E8];
-				qcom,mdss-dsi-dispparam-hbm-on-command-state = "dsi_lp_mode";
 			};
 		};
 	};
