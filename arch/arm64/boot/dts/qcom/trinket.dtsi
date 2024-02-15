@@ -411,6 +411,8 @@
 
 	soc: soc { };
 
+	firmware: firmware { };
+
 	reserved-memory {
 		#address-cells = <2>;
 		#size-cells = <2>;
